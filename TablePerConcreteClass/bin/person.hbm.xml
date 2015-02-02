@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.manh.practice">
+<class name="Person3" table="person3" >
+<id name="person_id" column="PERSON_ID">
+<generator class="increment"/>
+</id>
+<property name="firstName" column="firstname"/>
+<property name="lastName" column="lastname"/>
+
+</class>
+
+<class name="Employee3" table="employee3">
+<id name="person_id">
+<generator class="increment"></generator>
+</id>
+<property name="firstName" column="firstname"></property>
+<property name="lastName" column="lastname"></property>
+<property name="department_name" column="department_name"/>
+<property name="joining_date" column="joining_date"></property>
+</class>
+
+<class name="Owner2" table="owner2">
+<id name="person_id">
+<generator class="increment"></generator>
+</id>
+<property name="firstName" column="firstname"></property>
+<property name="lastName" column="lastname"></property>
+<property name="partnership_stake" column="partnership_stake"></property>
+<property name="stocks" column="stocks"></property>
+</class>
+</hibernate-mapping>

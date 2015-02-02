@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<class name="com.manh.practice.Person" table="Person" discriminator-value="P">
+<id name="personId" column="PERSON_ID">
+<generator class="native"></generator>
+</id>
+<discriminator column="DISCRIMINATOR" type="string"/>
+<property name="firstName" column="first_name"/>
+<property name="lastName" column="last_name"/>
+<subclass name="com.manh.practice.Employee" extends="com.manh.practice.Person" discriminator-value="E">
+<property name="departmentName" column="department_name"></property>
+<property name="joiningDate" column="joining_date" type="date"></property>
+</subclass>
+</class>
+</hibernate-mapping>

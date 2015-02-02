@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<class name="com.manh.practice.User2" table="USER_DETAILS">
+<id name="id" column="User_ID">
+<generator class="increment"></generator>
+</id>
+<property name="name" column="USER_NAME"></property>
+<component name="address" class="com.manh.practice.Address" >
+<property name="city" column="city_name"></property>
+<property name="state" column="state"></property>
+<property name="pin" column="pincode"></property>
+
+</component>
+</class>
+</hibernate-mapping>

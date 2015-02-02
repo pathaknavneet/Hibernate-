@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.manh.practice">
+<class name="com.manh.practice.Person2" table="PERSON2" discriminator-value="P">
+<id name="personId" column="PERSON_ID">
+<generator class="increment"/>
+</id>
+
+<property name="firstName" column="firstname"/>
+<property name="lastName" column="lastname"/>
+<joined-subclass name="Employee2" table="EMPLOYEE2" extends="Person2">
+<key column="person_id"/>
+<property name="joiningDate" column="joining_date" type="date"/>
+<property name="departmentname" column="department_name"/>
+</joined-subclass>
+<joined-subclass name="Owner" table="owner" extends="Person2">
+<key column="person_id"/>
+<property name="stocks" column="stocks"/>
+<property name="partnershipStake" column="partnrship_stake"/>
+</joined-subclass>
+</class>
+</hibernate-mapping>
